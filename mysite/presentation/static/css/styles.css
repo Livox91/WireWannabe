@@ -1,74 +1,79 @@
-    body {
-        margin: 0;
-        font-family: "Courier New", Courier, monospace;
-        background-color: #f8f8f8;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        /* Fills the browser height */
-    }
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
 
-    .container {
-        width: 90%;
-        height: 90%;
-        max-width: 800px;
-        background-color: #ffffff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        padding: 20px;
-        box-sizing: border-box;
-        border: 1px solid #ddd;
-    }
+body {
+    margin: 0;
+    font-family: "Kode Mono", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #f8f8f8;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Fills the browser height */
+}
 
-    .header {
-        font-size: 2.5rem;
-        /* Bigger font size */
-        font-weight: bold;
-        color: #0078ff;
-        /* Blue color like your design */
-        text-align: left;
-        margin-bottom: 10px;
-    }
+.container {
+    width: 90%;
+    height: 90%;
+    max-width: 800px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+}
 
-    hr {
-        border: none;
-        border-top: 1px solid #ccc;
-        margin-bottom: 20px;
-    }
+.header {
+    font-size: 2.5rem;
+    /* Bigger font size */
+    font-weight: bold;
+    color: #0078ff;
+    /* Blue color like your design */
+    text-align: left;
+    margin-bottom: 10px;
+}
 
-    .content {
-        font-size: 1.5rem;
-        /* Larger font for content */
-        line-height: 2rem;
-        margin: 20px 0;
-    }
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin-bottom: 20px;
+}
 
-    .steps {
-        font-size: 1.7rem;
-        /* Bigger "STEP-1" font */
-        margin: 30px 0 15px;
-    }
+.content {
+    font-size: 1.5rem;
+    /* Larger font for content */
+    line-height: 2rem;
+    margin: 20px 0;
+}
 
-    .buttons {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-    }
+.steps {
+    font-size: 1.7rem;
+    /* Bigger "STEP-1" font */
+    margin: 30px 0 15px;
+}
 
-    button {
-        font-size: 1.2rem;
-        padding: 10px 20px;
-        background-color: #e0e0e0;
-        border: 1px solid #aaa;
-        cursor: pointer;
-        text-decoration: none;
-    }
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
-    button:hover {
-        background-color: #ccc;
-    }
+button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    background-color: #e0e0e0;
+    border: 1px solid #aaa;
+    cursor: pointer;
+    text-decoration: none;
+}
 
-    a {
-        all: unset;
-    }
+button:hover {
+    background-color: #ccc;
+}
+
+a {
+    all: unset;
+}
