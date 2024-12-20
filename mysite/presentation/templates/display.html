@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stored Packets</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Stored Packets</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Timestamp</th>
+                <th>Source IP</th>
+                <th>Destination IP</th>
+                <th>Protocol</th>
+                <th>Source Port</th>
+                <th>Destination Port</th>
+                <th>Length</th>
+                <th>Payload</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for packet in packets %}
+            <tr>
+
+                <td>{{ packet.0}}</td>
+                <td>{{ packet.1}}</td>
+                <td>{{ packet.2}}</td>
+                <td>{{ packet.3}}</td>
+                <td>{{ packet.4}}</td>
+                <td>{{ packet.5}}</td>
+                <td>{{ packet.6}}</td>
+                <td>{{ packet.7}}</td>
+                <td>{{ packet.8}}</td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WireWannabe</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/secondPage.css' %}">
+    <script src="{% static 'js/sendData.js' %}" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">WireWannabe</div>
+        <hr>
+        <!-- Content Box -->
+        <div class="steps">STEP-2:</div>
+        <div class="steps">SELECT INTERFACE </div>
+        <div class="content-box">
+            <ul class="choice-list">
+                {% for choice in choices %}
+                <li class="choice-item">{{ choice }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <!-- Next Button -->
+        <div class="button-container">
+            <button class="next-button">
+                <a href="/third">Next</a>
+            </button>
+        </div>
+    </div>
+    <script>
+
+        let selectedChoice = null;
+
+
+        const choiceItems = document.querySelectorAll('.choice-item');
+
+        const nextButton = document.querySelector('.next-button');
+
+
+        choiceItems.forEach(item => {
+            item.addEventListener('click', () => {
+                choiceItems.forEach(i => i.style.backgroundColor = '');
+                item.style.backgroundColor = '#d0e8ff';
+                // set selected value to a number between 1 and max number of choices
+                selectedChoice = item.textContent.trim();
+            });
+        });
+
+        // Button click event
+        nextButton.addEventListener('click', () => {
+            if (selectedChoice) {
+                console.log(`Selected choice: ${selectedChoice}`);
+                payload = {
+                    interface: selectedChoice
+                }
+                sendDataToBackend(payload);
+
+            } else {
+                console.log("No choice selected.");
+            }
+        });
+
+    </script>
+</body>
+
+</html>

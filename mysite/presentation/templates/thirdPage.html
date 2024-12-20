@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WireWannabe</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/thirdPage.css' %}">
+    <script src="{% static 'js/sendData.js' %}" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">WireWannabe</div>
+        <hr>
+        <div class="steps">STEP-3: </div>
+        <div class="steps">SELECT PROTOCOL </div>
+        <!-- Content Box -->
+        <div class="content-box ">
+            <ul class="choice-list">
+                {% for choice in choices %}
+                <li class="choice-item">{{ choice }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <!-- Next Button -->
+        <div class="button-container">
+            <button class="next-button">
+                <a href="/fourth">Next</a>
+            </button>
+        </div>
+    </div>
+    <script>
+        let selectedChoice = null;
+
+
+        const choiceItems = document.querySelectorAll('.choice-item');
+        const nextButton = document.querySelector('.next-button');
+
+
+        choiceItems.forEach(item => {
+            item.addEventListener('click', () => {
+
+                choiceItems.forEach(i => i.style.backgroundColor = '');
+                item.style.backgroundColor = '#d0e8ff';
+                selectedChoice = item.textContent.trim();
+                if (selectedChoice == "all" || selectedChoice == "ALL") {
+                    selectedChoice = "";
+                }
+                console.log(selectedChoice.toLowerCase());
+            });
+        });
+
+        // Button click event
+        nextButton.addEventListener('click', () => {
+            if (selectedChoice) {
+                console.log("User selected choice:", selectedChoice);
+                payload = {
+                    bpfFilter: selectedChoice
+                }
+                sendDataToBackend(payload);
+
+            } else {
+                console.log("No choice selected.");
+            }
+        });
+    </script>
+</body>
+
+</html>

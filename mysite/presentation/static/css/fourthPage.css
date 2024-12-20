@@ -1,0 +1,87 @@
+/* Global Reset */
+body {
+    margin: 0;
+    font-family: "Courier New", Courier, monospace;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 600px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Header */
+.header {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0078ff;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+/* Content Box */
+.content-box {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Input Group */
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+label {
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.input-field {
+    width: 50%;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    background-color: #e8e8e8;
+}
+
+/* Button Container */
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.capture-button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #d3d3d3;
+    border: 1px solid #aaa;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.capture-button:hover {
+    background-color: #c0c0c0;
+}

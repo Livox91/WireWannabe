@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WireWannabe</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/fourthPage.css' %}">
+    <script src="{% static 'js/sendData.js' %}" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">WireWannabe</div>
+        <hr>
+        <!-- Input Form -->
+        <div class="content-box">
+            <div class="input-group">
+                <label for="numPackets">Enter The Number of Packets:</label>
+                <input type="text" id="numPackets" class="input-field" placeholder="0">
+            </div>
+            <div class="input-group">
+                <label for="fileName">Enter The File Name:</label>
+                <input type="text" id="fileName" class="input-field" placeholder="example.txt">
+            </div>
+            <!-- Button -->
+            <div class="button-container">
+                <button id="captureBtn" class="capture-button">Start Capturing</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById("captureBtn").addEventListener("click", () => {
+            var numPackets = document.getElementById("numPackets").value;
+            const fileName = document.getElementById("fileName").value;
+
+            console.log("Number of Packets:", numPackets);
+            console.log("File Name:", fileName);
+
+            if (!numPackets || !fileName) {
+                alert("Please fill in both fields.");
+            }
+            payload = {
+                output_file: fileName,
+                count: numPackets
+            }
+            sendDataToBackend(payload);
+            runScript();
+
+        });
+
+        function runScript() {
+            window.location.href = "/run";
+        }
+    </script>
+</body>
+
+</html>
